@@ -1,5 +1,6 @@
 import { GitBranch } from 'lucide-react'
 import { Hero } from '@/components/hero'
+import { Journey } from '@/components/journey'
 import { Projects } from '@/components/projects'
 
 export default function Page() {
@@ -18,6 +19,12 @@ export default function Page() {
             SoftCoder
           </a>
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
+            <a
+              href="#journey"
+              className="hidden transition-colors hover:text-foreground sm:inline"
+            >
+              Journey
+            </a>
             <a
               href="#projects"
               className="hidden transition-colors hover:text-foreground sm:inline"
@@ -39,6 +46,7 @@ export default function Page() {
       </header>
 
       <Hero />
+      <Journey />
       <Projects />
 
       {/* Footer */}
