@@ -15,8 +15,8 @@ export function Tensors() {
     <section
       id="tensors"
       className="relative mx-auto max-w-6xl px-6 py-24"
-      // scoped emerald accent to reflect the Tensors brand
-      style={{ ['--brand' as string]: 'oklch(0.72 0.15 165)' }}
+      // warm terracotta accent for the Tensors collaboration
+      style={{ ['--brand' as string]: '#d98569' }}
     >
       <Reveal>
         <div className="flex flex-col gap-3">
