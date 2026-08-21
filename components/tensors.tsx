@@ -137,7 +137,7 @@ export function Tensors() {
                 href="https://tenspark.tensors.in"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="mt-auto inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--brand)] px-4 py-2.5 pt-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+                className="mt-3.5 inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--brand)] px-4 py-2.5 pt-2.5 text-xs font-semibold text-background transition-opacity hover:opacity-90"
               >
                 <Gamepad2 className="h-4 w-4" />
                 Play Tenspark
