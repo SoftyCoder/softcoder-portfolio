@@ -1,6 +1,7 @@
 import { GitBranch } from 'lucide-react'
 import { Hero } from '@/components/hero'
 import { Journey } from '@/components/journey'
+import { Tensors } from '@/components/tensors'
 import { Projects } from '@/components/projects'
 
 export default function Page() {
@@ -26,6 +27,12 @@ export default function Page() {
               Journey
             </a>
             <a
+              href="#tensors"
+              className="hidden transition-colors hover:text-foreground sm:inline"
+            >
+              Tensors
+            </a>
+            <a
               href="#projects"
               className="hidden transition-colors hover:text-foreground sm:inline"
             >
@@ -47,6 +54,7 @@ export default function Page() {
 
       <Hero />
       <Journey />
+      <Tensors />
       <Projects />
 
       {/* Footer */}
