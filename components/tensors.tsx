@@ -38,7 +38,7 @@ export function Tensors() {
       <div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-5">
         {/* Consultancy card */}
         <Reveal className="lg:col-span-2">
-          <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/70 p-6 backdrop-blur transition-colors duration-300 hover:border-[color-mix(in_oklch,var(--brand)_50%,transparent)]">
+          <div className="group relative flex h-full flex-col gap-0 overflow-hidden rounded-2xl border border-border bg-card/70 p-6 backdrop-blur transition-colors duration-300 hover:border-[color-mix(in_oklch,var(--brand)_50%,transparent)]">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary text-[var(--brand)]">
                 <Building2 className="h-5 w-5" />
