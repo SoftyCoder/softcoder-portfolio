@@ -78,15 +78,36 @@ export function Tensors() {
               </div>
             </div>
 
-            <a
-              href="https://tensors.in"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-auto inline-flex items-center gap-1.5 pt-6 font-mono text-sm text-[var(--brand)] transition-opacity hover:opacity-80"
-            >
-              tensors.in
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+            <div className="mt-auto flex flex-col gap-2 pt-6">
+              <a
+                href="https://tensors.in"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1.5 font-mono text-sm text-[var(--brand)] transition-opacity hover:opacity-80"
+              >
+                tensors.in
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/tensors_official/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1.5 font-mono text-sm text-[var(--brand)] transition-opacity hover:opacity-80"
+              >
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <circle cx="17.5" cy="6.5" r="1.5" />
+                </svg>
+                @tensors_official
+              </a>
+            </div>
           </div>
         </Reveal>
 
