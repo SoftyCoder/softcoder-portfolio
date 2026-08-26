@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
@@ -14,11 +15,29 @@ export const metadata: Metadata = {
   description:
     'Portfolio of SoftCoder — developer and BTech student at IIT Madras. Vibecoded web apps, gaming & community, motion graphics, and competitive programming.',
   generator: 'v0.app',
+  openGraph: {
+    title: 'SoftCoder — Developer & BTech @ IIT Madras',
+    description:
+      'Portfolio of SoftCoder — developer and BTech student at IIT Madras. Vibecoded web apps, gaming & community, motion graphics, and competitive programming.',
+    url: 'https://softcoder.dev',
+    siteName: 'SoftCoder',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SoftCoder — Developer & BTech @ IIT Madras',
+    description:
+      'Portfolio of SoftCoder — developer and BTech student at IIT Madras. Vibecoded web apps, gaming & community, motion graphics, and competitive programming.',
+  },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#09090b',
+  colorScheme: 'dark light',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
+  ],
 }
 
 export default function RootLayout({
@@ -29,10 +48,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark bg-background ${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="antialiased font-sans">
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

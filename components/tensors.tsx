@@ -15,22 +15,21 @@ export function Tensors() {
     <section
       id="tensors"
       className="relative mx-auto max-w-6xl px-6 py-24"
-      // warm terracotta accent for the Tensors collaboration
       style={{ ['--brand' as string]: '#d98569' }}
     >
       <Reveal>
         <div className="flex flex-col gap-3">
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--brand)]">
-            {'// currently building with'}
+            {'// community spotlight'}
           </span>
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
             Tensors
           </h2>
           <p className="max-w-xl text-pretty text-muted-foreground">
-            A student-run tech consultancy born out of IIT Madras. Tensors takes
-            on real client briefs, ships software end-to-end, and reinvests into
-            social impact and mentorship — and I&apos;m proud to be part of the
-            team.
+            A student-run tech consultancy from IIT Madras that I&apos;d like to
+            highlight. They take on real client briefs, ship software
+            end-to-end, and reinvest into social impact and mentorship —
+            definitely worth checking out.
           </p>
         </div>
       </Reveal>

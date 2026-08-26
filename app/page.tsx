@@ -1,8 +1,11 @@
 import { GitBranch } from 'lucide-react'
 import { Hero } from '@/components/hero'
 import { Journey } from '@/components/journey'
+import { TechStack } from '@/components/tech-stack'
 import { Tensors } from '@/components/tensors'
 import { Projects } from '@/components/projects'
+import { Contact } from '@/components/contact'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function Page() {
   return (
@@ -11,7 +14,7 @@ export default function Page() {
       <header className="fixed inset-x-0 top-0 z-50">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
-            href="#"
+            href="/"
             className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight"
           >
             <span className="flex h-6 w-6 items-center justify-center rounded-md bg-accent text-accent-foreground">
@@ -27,6 +30,12 @@ export default function Page() {
               Journey
             </a>
             <a
+              href="#tech-stack"
+              className="hidden transition-colors hover:text-foreground sm:inline"
+            >
+              Stack
+            </a>
+            <a
               href="#tensors"
               className="hidden transition-colors hover:text-foreground sm:inline"
             >
@@ -39,7 +48,13 @@ export default function Page() {
               Projects
             </a>
             <a
-              href="https://github.com"
+              href="#contact"
+              className="hidden transition-colors hover:text-foreground sm:inline"
+            >
+              Contact
+            </a>
+            <a
+              href="https://github.com/SoftyCoder"
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
@@ -47,6 +62,7 @@ export default function Page() {
               <GitBranch className="h-4 w-4" />
               <span className="hidden sm:inline">GitHub</span>
             </a>
+            <ThemeToggle />
           </nav>
         </div>
         <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -54,8 +70,10 @@ export default function Page() {
 
       <Hero />
       <Journey />
+      <TechStack />
       <Tensors />
       <Projects />
+      <Contact />
 
       {/* Footer */}
       <footer className="border-t border-border">

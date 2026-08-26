@@ -73,7 +73,7 @@ export function Hero() {
             nativeButton={false}
             render={
               <a
-                href="https://github.com"
+                href="https://github.com/SoftyCoder"
                 target="_blank"
                 rel="noreferrer noopener"
               />

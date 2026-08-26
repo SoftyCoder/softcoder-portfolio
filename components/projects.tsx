@@ -8,6 +8,7 @@ import {
   Users,
   Cpu,
   Wrench,
+  ArrowUpRight,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Reveal } from '@/components/reveal'
@@ -15,13 +16,23 @@ import { Reveal } from '@/components/reveal'
 interface BentoCardProps {
   className?: string
   children: React.ReactNode
+  href?: string
 }
 
-function BentoCard({ className, children }: BentoCardProps) {
+function BentoCard({ className, children, href }: BentoCardProps) {
+  const Tag = href ? 'a' : 'div'
   return (
-    <div
+    <Tag
+      {...(href
+        ? {
+            href,
+            target: '_blank',
+            rel: 'noreferrer noopener',
+          }
+        : {})}
       className={cn(
-        'group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/70 p-6 backdrop-blur transition-colors duration-300 hover:border-accent/50',
+        'group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/70 p-6 backdrop-blur transition-all duration-300 hover:border-accent/50',
+        href && 'cursor-pointer',
         className,
       )}
     >
@@ -36,7 +47,10 @@ function BentoCard({ className, children }: BentoCardProps) {
         }}
       />
       {children}
-    </div>
+      {href && (
+        <ArrowUpRight className="absolute right-4 top-4 h-4 w-4 text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+      )}
+    </Tag>
   )
 }
 
@@ -61,7 +75,7 @@ export function Projects() {
       <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
         {/* Gaming & Community — large */}
         <Reveal className="md:col-span-2 md:row-span-1">
-          <BentoCard className="h-full">
+          <BentoCard className="h-full" href="https://github.com/SoftyCoder?tab=repositories">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
                 <Gamepad2 className="h-5 w-5" />
@@ -93,7 +107,7 @@ export function Projects() {
 
         {/* Vibecoded Web Apps — tall */}
         <Reveal delay={80} className="md:col-span-1 md:row-span-2">
-          <BentoCard className="h-full">
+          <BentoCard className="h-full" href="https://github.com/SoftyCoder?tab=repositories">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
                 <LayoutDashboard className="h-5 w-5" />
@@ -131,7 +145,7 @@ export function Projects() {
 
         {/* Motion Graphics */}
         <Reveal delay={120} className="md:col-span-1 md:row-span-1">
-          <BentoCard className="h-full">
+          <BentoCard className="h-full" href="https://github.com/SoftyCoder?tab=repositories">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
                 <Film className="h-5 w-5" />
@@ -154,9 +168,9 @@ export function Projects() {
           </BentoCard>
         </Reveal>
 
-        {/* Algorithms & Logic — stat focused */}
+        {/* Algorithms & Logic */}
         <Reveal delay={160} className="md:col-span-1 md:row-span-1">
-          <BentoCard className="h-full">
+          <BentoCard className="h-full" href="https://github.com/SoftyCoder?tab=repositories">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary text-accent">
                 <Binary className="h-5 w-5" />
@@ -167,19 +181,17 @@ export function Projects() {
               Competitive programming and relentless problem-solving on LeetCode
               and beyond.
             </p>
-            <div className="mt-auto grid grid-cols-2 gap-3 pt-6">
-              <div className="rounded-lg border border-border bg-secondary/50 p-3">
-                <p className="font-mono text-2xl font-semibold text-accent">
-                  450+
-                </p>
-                <p className="text-xs text-muted-foreground">Problems solved</p>
-              </div>
-              <div className="rounded-lg border border-border bg-secondary/50 p-3">
-                <p className="font-mono text-2xl font-semibold text-accent">
-                  1800
-                </p>
-                <p className="text-xs text-muted-foreground">Peak rating</p>
-              </div>
+            <div className="mt-auto flex flex-wrap gap-2 pt-6">
+              {['C++', 'Problem Solving', 'Competitive Programming'].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-border bg-secondary/60 px-3 py-1 font-mono text-xs text-muted-foreground"
+                  >
+                    {tag}
+                  </span>
+                ),
+              )}
             </div>
           </BentoCard>
         </Reveal>
