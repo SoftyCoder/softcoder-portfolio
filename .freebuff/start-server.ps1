@@ -1,0 +1,2 @@
+$proc = Start-Process -FilePath 'npm.cmd' -ArgumentList 'run','dev' -WorkingDirectory 'C:\Users\rosha\OneDrive\Documents\GitHub\softcoder-portfolio' -RedirectStandardOutput 'C:\Users\rosha\OneDrive\Documents\GitHub\softcoder-portfolio\.freebuff\preview-79985da8-a241-4826-9b73-4d34261e85be.log' -RedirectStandardError 'C:\Users\rosha\OneDrive\Documents\GitHub\softcoder-portfolio\.freebuff\preview-79985da8-a241-4826-9b73-4d34261e85be.log.err' -WindowStyle Hidden -PassThru
+Write-Output $proc.Id
